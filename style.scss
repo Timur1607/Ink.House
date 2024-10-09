@@ -21,6 +21,7 @@
 .header__top{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .container{
@@ -31,7 +32,7 @@
 
 .header__logo{
     width: 143px;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     justify-content: space-between;
     height: 35px;
@@ -39,7 +40,7 @@
 
 .header__menu{
     width: 472px;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .menu_button{
@@ -81,14 +82,15 @@
     display: flex;
     justify-content: space-between;
     gap: 30px;
+    // flex-wrap: wrap;
 }
 
 .main__desc{
+    max-width: 540px;
     padding: 145px 0 144px 0;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 540px;
 }
 
 .main__title{
