@@ -30,6 +30,12 @@
   justify-content: space-between;
   height: 24px;
 }
+.header__hr {
+  display: none;
+}
+.header__mobile {
+  display: none;
+}
 
 .container {
   max-width: 1110px;
@@ -162,6 +168,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 .reproductions__menu_text {
   display: flex;
@@ -221,22 +228,21 @@
   justify-content: space-between;
 }
 .reproductions__articles {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
 }
 .reproductions__article {
-  width: 350px;
-  height: 730px;
+  width: 100%;
   padding: 20px 20px 30px 20px;
   background: #E1EDE6;
-  margin-top: 30px;
 }
 
 .article__img {
   display: block;
   overflow: hidden;
   margin-bottom: 20px;
+  width: 100%;
 }
 .article__autor {
   color: #86928B;
@@ -268,7 +274,7 @@
 }
 .article__button {
   display: flex;
-  width: 310px;
+  width: 100%;
   height: 65px;
   padding: 20px 60px;
   justify-content: center;
@@ -316,6 +322,7 @@
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 .new-collection__logo_text {
   color: #F4F6F5;
@@ -436,6 +443,9 @@
   padding: 23px 39px;
   background: #E1EDE6;
 }
+.footer__hr {
+  display: none;
+}
 .footer__all {
   max-width: 1110px;
   width: 100%;
@@ -525,6 +535,7 @@
 .footer__sotial_apps {
   display: flex;
   justify-content: space-between;
+  gap: 30px;
 }
 .footer__sotial_logo {
   color: #86928B;
@@ -539,6 +550,10 @@
   font-size: 12px;
   font-weight: 500;
   line-height: 120%;
+}
+
+.footer__mobile {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -561,5 +576,271 @@
   }
   .reproductions__menu_text {
     font-size: 30px;
+  }
+  .reproductions__articles {
+    grid-template-columns: repeat(auto-fill, minmax(234px, 1fr));
+  }
+  .footer__info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .footer__sotial_apps {
+    margin-right: 38px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .header {
+    padding: 33px 33px 32px 33px;
+  }
+  .main {
+    padding: 0 33px;
+  }
+  .reproductions {
+    padding: 69px 33px 70px 33px;
+  }
+  .new-collection {
+    padding: 70px 33px;
+  }
+  .our-team {
+    padding: 70px 33px;
+  }
+  .footer {
+    padding: 23px 33px;
+  }
+  .header__menu {
+    max-width: 510px;
+    width: 100%;
+  }
+  .header__top {
+    flex-wrap: wrap;
+  }
+  .header__logo {
+    margin: 0 auto;
+  }
+  .header__hr {
+    display: block;
+    width: 510px;
+    height: 1px;
+    background: #C3D1C6;
+    margin: 16px 0;
+  }
+  .reproductions__menu {
+    gap: 20px;
+  }
+  .main__top {
+    padding: 50px 0;
+  }
+  .main__desc {
+    max-width: 285px;
+    width: 100%;
+    gap: 10px;
+  }
+  .main__title {
+    font-size: 36px;
+    margin: 0;
+  }
+  .main__img {
+    width: 195px;
+    height: 239px;
+  }
+  .main__text {
+    font-size: 16px;
+    margin: 0;
+  }
+  .main__button {
+    width: 178px;
+    height: 50px;
+    font-size: 18px;
+  }
+  .new-collection__logo {
+    max-width: 331px;
+    width: 100%;
+  }
+  .new-collection__logo_text {
+    font-size: 24px;
+    width: 261px;
+  }
+  .new-collection__logo_img {
+    width: 50px;
+  }
+  .new-collection__text1 {
+    font-size: 16px;
+  }
+  .new-collection__text2 {
+    font-size: 16px;
+  }
+  .new-collection__button {
+    width: 190px;
+    height: 50px;
+    font-size: 18px;
+  }
+  .footer__hr {
+    display: block;
+    width: 510px;
+    height: 1px;
+    background: #C3D1C6;
+    margin: 16px 0;
+  }
+  .footer__sotial {
+    margin: 0 auto;
+  }
+  .footer__nav {
+    max-width: 510px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header {
+    padding: 33px 15px 32px 15px;
+  }
+  .main {
+    padding: 0 15px;
+  }
+  .reproductions {
+    padding: 0 15px 70px 15px;
+  }
+  .new-collection {
+    padding: 70px 15px;
+  }
+  .our-team {
+    padding: 70px 15px;
+  }
+  .footer {
+    padding: 23px 15px;
+  }
+  .reproductions__buttons {
+    overflow: scroll;
+    gap: 20px;
+  }
+  .main__picture {
+    display: none;
+  }
+  .main__img {
+    display: none;
+  }
+  .header__menu {
+    display: none;
+  }
+  .header__hr {
+    display: none;
+  }
+  .header {
+    display: none;
+  }
+  .our-team__text1 {
+    font-size: 24px;
+  }
+  .our-team__text2 {
+    font-size: 16px;
+  }
+  .header__mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile__logo {
+    width: 143px;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 16px;
+  }
+  .mobile__logo_img {
+    width: 35px;
+    height: 35px;
+  }
+  .mobile__logo_text {
+    color: #598D66;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+  }
+  .mobile__menu {
+    background: #E1EDE6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 15px;
+  }
+  .footer {
+    display: none;
+  }
+  .footer__mobile {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #E1EDE6;
+  }
+  .footer__mobile1 {
+    display: flex;
+    height: 35px;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer__mobile2 {
+    display: flex;
+    width: 290px;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .footer__mobile_location {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .footer__location_number {
+    font-size: 16px;
+  }
+  .footer__location_name {
+    font-size: 16px;
+  }
+  .footer__mobile_reprodactions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .footer__nav_h3 {
+    font-size: 16px;
+  }
+  .footer__nav_text {
+    font-size: 16px;
+  }
+  .footer__hr {
+    width: 290px;
+  }
+  .footer__mobile3 {
+    display: flex;
+    width: 290px;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .footer__mobile_news {
+    display: flex;
+    width: 136px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .footer__mobile_about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .footer__sotial_apps {
+    margin: 0 auto;
   }
 }/*# sourceMappingURL=style.css.map */
