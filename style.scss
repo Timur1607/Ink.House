@@ -267,7 +267,7 @@
 
     &__articles {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 30px;
         // display: flex;
         // justify-content: space-between;
@@ -280,6 +280,8 @@
         padding: 20px 20px 30px 20px;
         background: #E1EDE6;
         // margin-top: 30px;
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -293,7 +295,7 @@
 
     &__autor {
         color: #86928B;
-        font-family: "Raleway" sans-serif;
+        font-family: "Raleway", sans-serif;
         font-size: 18px;
         font-weight: 500;
         margin-bottom: 10px;
@@ -312,7 +314,7 @@
         font-family: "Raleway", sans-serif;
         font-size: 18px;
         font-weight: 500;
-        margin-bottom: 30px;
+        margin-bottom: auto;
     }
 
     &__price {
@@ -679,7 +681,7 @@
     }
 
     .reproductions__articles{
-        grid-template-columns: repeat(auto-fill, minmax(234px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     }
 
     .footer__info{
@@ -969,5 +971,7 @@
         margin: 0 auto;
     }
 
-
+    .our-team__picture{
+        display: none;
+    }
 }
