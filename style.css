@@ -694,6 +694,136 @@
     width: 100%;
   }
 }
+.burger__label {
+  z-index: 10;
+}
+
+.mobile__menu_burger {
+  position: absolute;
+  width: 23px;
+  height: 30px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+}
+
+.mobile__menu_burger input:checked ~ .menu__burger {
+  right: 0;
+}
+
+.mobile__menu_burger input:checked ~ .burger__label .burger__line {
+  transform: rotate(45deg);
+}
+
+.mobile__menu_burger input:checked ~ .burger__label .burger__line::after {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+.mobile__menu_burger input:checked ~ .burger__label .burger__line::before {
+  transform: rotate(0deg);
+  top: 0;
+}
+
+.menu__burger {
+  position: fixed;
+  top: 0;
+  right: 100%;
+  height: 100vh;
+  width: 100%;
+  list-style: none;
+  transition: 0.5s;
+  text-align: start;
+}
+
+#chekbox {
+  display: none;
+}
+
+.our-team__mobile {
+  padding: 60px 15px 94px 15px;
+  background: #F4F6F5;
+  display: none;
+}
+
+.menu_img_mobile {
+  display: flex;
+}
+
+.menu__ul {
+  text-align: start;
+  margin-bottom: 68px;
+}
+
+.menu__li {
+  text-align: start;
+}
+
+.menu__a {
+  color: #2C2D35;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.burger__line, .burger__line::before, .burger__line::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #4C5866;
+  border-radius: 4px;
+}
+
+.burger__line::before {
+  content: "";
+  top: -8px;
+}
+
+.burger__line::after {
+  content: "";
+  top: 8px;
+}
+
+.menu__burger_div {
+  height: 100%;
+  background-color: #E1EDE6;
+}
+
+.menu__burger_nav {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 117px;
+  height: 163px;
+  background-color: #E1EDE6;
+  padding-top: 30px;
+}
+
+.menu__burger_top {
+  width: 320px;
+  height: 50px;
+  background-color: #fff;
+}
+
+.menu__burger_logo {
+  display: flex;
+  width: 143px;
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 16px;
+  background-color: #FFF;
+}
+
 @media screen and (max-width: 320px) {
   .header {
     padding: 33px 15px 32px 15px;
@@ -769,9 +899,10 @@
   .mobile__menu {
     background: #E1EDE6;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 16px 15px;
+    position: relative;
   }
   .footer {
     display: none;
@@ -845,7 +976,24 @@
   .footer__sotial_apps {
     margin: 0 auto;
   }
+  .our-team__mobile {
+    display: block;
+  }
   .our-team__picture {
     display: none;
+  }
+  .our-team {
+    display: none;
+  }
+  .our-team__info {
+    padding-top: 30px;
+  }
+  .mobile__menu_burger {
+    display: block;
+    position: absolute;
+    left: 15px;
+  }
+  .menu__burger_nav {
+    display: flex;
   }
 }/*# sourceMappingURL=style.css.map */
