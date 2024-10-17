@@ -593,6 +593,10 @@
     margin-right: 38px;
   }
 }
+.our-team__mobile_picture {
+  display: none;
+}
+
 @media screen and (max-width: 576px) {
   .header {
     padding: 33px 33px 32px 33px;
@@ -693,6 +697,15 @@
     max-width: 510px;
     width: 100%;
   }
+  .our-team__mobile_picture {
+    display: block;
+  }
+  .our-team__picture1 {
+    display: none;
+  }
+  .our-team__picture2 {
+    display: none;
+  }
 }
 .burger__label {
   z-index: 10;
@@ -732,10 +745,11 @@
 }
 
 .menu__burger {
+  background-color: #E1EDE6;
   position: fixed;
   top: 0;
   right: 100%;
-  height: 100vh;
+  height: 433px;
   width: 100%;
   list-style: none;
   transition: 0.5s;
@@ -805,7 +819,7 @@
   width: 117px;
   height: 163px;
   background-color: #E1EDE6;
-  padding-top: 30px;
+  margin-top: 76px;
 }
 
 .menu__burger_top {
@@ -824,6 +838,14 @@
   margin-top: 15px;
   margin-bottom: 16px;
   background-color: #FFF;
+}
+
+.mobile__logo {
+  display: none;
+}
+
+.mobile__menu {
+  display: none;
 }
 
 @media screen and (max-width: 320px) {
