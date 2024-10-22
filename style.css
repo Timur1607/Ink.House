@@ -32,6 +32,7 @@
 }
 .header__hr {
   display: none;
+  border: none;
 }
 .header__mobile {
   display: none;
@@ -80,9 +81,17 @@
   text-decoration: none;
 }
 
-.menu_img:hover {
-  fill: #598D66;
+.menu_img {
+  transition: 0.5s;
+}
+.menu_img:hover path {
   stroke: #598D66;
+}
+.menu_img:focus path {
+  background: #D4E8D9;
+}
+.menu_img:active path {
+  stroke: #376B44;
 }
 
 .main {
@@ -185,6 +194,7 @@
   font-size: 40px;
   font-weight: 500;
   line-height: 110%;
+  margin-bottom: 20px;
 }
 .reproductions__menu_button {
   display: flex;
@@ -199,6 +209,7 @@
   border: 2px solid #D4E8D9;
   cursor: pointer;
   transition: 0.5s;
+  height: 43px;
 }
 .reproductions__menu_button:hover {
   background: #598D66;
@@ -298,6 +309,7 @@
   background-color: transparent;
   cursor: pointer;
   transition: 0.5s;
+  padding: 20px 20px;
 }
 .article__button:hover {
   background: #598D66;
@@ -401,6 +413,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 30px;
 }
 .our-team__picture {
   max-width: 445px;
@@ -458,6 +471,7 @@
 }
 .footer__hr {
   display: none;
+  border: none;
 }
 .footer__all {
   max-width: 1110px;
@@ -479,6 +493,7 @@
   align-items: center;
   justify-content: space-between;
   flex-shrink: 0;
+  cursor: pointer;
 }
 .footer__logo_text {
   color: #598D66;
@@ -497,9 +512,10 @@
   font-family: "Raleway", sans-serif;
   font-size: 20px;
   font-weight: 500;
+  text-decoration: none;
 }
 .footer__location_name {
-  color: #2C2D35;
+  color: #86928B;
   font-family: "Raleway", sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -516,6 +532,9 @@
   font-size: 20px;
   font-weight: 500;
   text-decoration: none;
+}
+.footer__nav_h3 :hover {
+  color: #598D66;
 }
 .footer__nav_text {
   color: #86928B;
@@ -550,6 +569,20 @@
   display: flex;
   justify-content: space-between;
   gap: 30px;
+  transition: 0.5s;
+}
+.footer__sotial_app {
+  transition: 0.5s;
+}
+.footer__sotial_app:hover path {
+  fill: #598D66;
+}
+.footer__sotial_app:focus path {
+  stroke: #D4E8D9;
+  background-color: #D4E8D9;
+}
+.footer__sotial_app:active path {
+  fill: #376B44;
 }
 .footer__sotial_logo {
   color: #86928B;
@@ -709,7 +742,7 @@
     margin: 0;
   }
   .main__img {
-    width: 195px;
+    max-width: 195px;
     height: 239px;
   }
   .main__text {
@@ -1089,6 +1122,8 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
+    max-width: 114px;
+    width: 100%;
   }
   .footer__nav_h3 {
     font-size: 16px;
@@ -1114,6 +1149,8 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
+    max-width: 114px;
+    width: 100%;
   }
   .footer__sotial_apps {
     margin: 0 auto;
