@@ -9,7 +9,7 @@
 }
 
 .header {
-  padding: 33px 39px 32px 39px;
+  padding: 33px 0 32px 0;
   background: #E1EDE6;
 }
 .header__top {
@@ -39,7 +39,8 @@
 }
 
 .container {
-  max-width: 1110px;
+  max-width: 1188px;
+  padding: 0 39px;
   width: 100%;
   margin: 0 auto;
 }
@@ -63,6 +64,7 @@
   color: #2C2D35;
 }
 .menu_button:active {
+  background: transparent;
   color: #376B44;
 }
 
@@ -84,6 +86,9 @@
 .menu_img {
   transition: 0.5s;
 }
+.menu_img path {
+  transition: 0.5s;
+}
 .menu_img:hover path {
   stroke: #598D66;
   transition: 0.5s;
@@ -98,11 +103,12 @@
 .main {
   display: flex;
   background: #F4F6F5;
-  padding: 50px 39px;
 }
 .main__top {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 30px;
 }
 .main__desc {
   max-width: 540px;
@@ -113,7 +119,6 @@
 }
 .main__picture {
   display: block;
-  margin-right: 30px;
   max-width: 540px;
   width: 100%;
 }
@@ -141,7 +146,7 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 150%;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 .main__button {
   width: 227px;
@@ -177,13 +182,14 @@
 
 .reproductions {
   background-color: #F4F6F5;
-  padding: 69px 39px 70px 39px;
+  padding: 69px 0 70px 0;
 }
 .reproductions__menu {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
   flex-wrap: wrap;
+  align-content: center;
 }
 .reproductions__menu_text {
   display: flex;
@@ -195,7 +201,6 @@
   font-size: 40px;
   font-weight: 500;
   line-height: 110%;
-  margin-bottom: 20px;
 }
 .reproductions__menu_button {
   display: flex;
@@ -330,7 +335,7 @@
   background-image: url(./img/pic_background.webp);
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 70px 39px;
+  padding: 70px 0;
 }
 .new-collection__all {
   max-width: 540px;
@@ -341,7 +346,7 @@
   width: 100%;
   max-height: 80px;
   height: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -381,7 +386,6 @@
   justify-content: center;
   align-items: center;
   gap: 6px;
-  flex-shrink: 0;
   background: #EEDB6D;
   border: 1px solid #EEDB6D;
   color: #2C2D35;
@@ -406,15 +410,15 @@
 
 .our-team {
   background: #F4F6F5;
-  padding: 70px 39px;
+  padding: 70px 0;
 }
 .our-team__all {
   max-width: 1110px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 30px;
+  align-items: center;
 }
 .our-team__picture {
   max-width: 445px;
@@ -422,9 +426,7 @@
   max-height: 440px;
   height: 100%;
   position: relative;
-}
-.our-team__picture1 {
-  margin-top: 79px;
+  margin-top: 70px;
 }
 .our-team__picture2 {
   position: absolute;
@@ -432,7 +434,6 @@
   bottom: 43px;
 }
 .our-team__info {
-  padding-top: 124px;
   max-width: 635px;
   width: 100%;
   display: flex;
@@ -467,7 +468,7 @@
 }
 
 .footer {
-  padding: 23px 39px;
+  padding: 23px 0;
   background: #E1EDE6;
 }
 .footer__hr {
@@ -514,6 +515,18 @@
   font-size: 20px;
   font-weight: 500;
   text-decoration: none;
+  transition: 0.5s;
+}
+.footer__location_number:hover {
+  color: #598D66;
+}
+.footer__location_number:focus {
+  background: #D4E8D9;
+  color: #2C2D35;
+}
+.footer__location_number:active {
+  background: transparent;
+  color: #376B44;
 }
 .footer__location_name {
   color: #86928B;
@@ -533,9 +546,18 @@
   font-size: 20px;
   font-weight: 500;
   text-decoration: none;
+  transition: 0.5s;
 }
-.footer__nav_h3 :hover {
+.footer__nav_h3:hover {
   color: #598D66;
+}
+.footer__nav_h3:focus {
+  background: #D4E8D9;
+  color: #2C2D35;
+}
+.footer__nav_h3:active {
+  background: transparent;
+  color: #376B44;
 }
 .footer__nav_text {
   color: #86928B;
@@ -564,7 +586,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 30px;
 }
 .footer__sotial_apps {
   display: flex;
@@ -573,6 +594,10 @@
   transition: 0.5s;
 }
 .footer__sotial_app {
+  transition: 0.5s;
+  cursor: pointer;
+}
+.footer__sotial_app path {
   transition: 0.5s;
 }
 .footer__sotial_app:hover path {
@@ -583,6 +608,7 @@
   background-color: #D4E8D9;
 }
 .footer__sotial_app:active path {
+  background-color: transparent;
   fill: #376B44;
 }
 .footer__sotial_logo {
@@ -604,14 +630,11 @@
   display: none;
 }
 
-@media screen and (max-width: 1440px) {
-  .main {
-    padding: 0 39px;
-  }
-}
-@media screen and (max-width: 1157px) {
-  .our-team__info {
+@media screen and (max-width: 900px) {
+  .our-team__all {
     padding-top: 40px;
+    flex-wrap: wrap;
+    gap: 40px;
   }
 }
 @media screen and (max-width: 835px) {
@@ -646,8 +669,11 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .main {
-    padding: 0 39px;
+  .header__menu {
+    max-width: 446px;
+  }
+  .menu_button {
+    font-size: 18px;
   }
   .main__top {
     gap: 30px;
@@ -724,23 +750,23 @@
   }
 }
 @media screen and (max-width: 576px) {
-  .header {
-    padding: 33px 33px 32px 33px;
-  }
-  .main {
+  .container {
     padding: 0 33px;
   }
+  .header {
+    padding: 33px 0 32px 0;
+  }
   .reproductions {
-    padding: 0 33px 70px 33px;
+    padding: 0 0 70px 0;
   }
   .new-collection {
-    padding: 50px 33px;
+    padding: 50px 0;
   }
   .our-team {
-    padding: 50px 33px;
+    padding: 50px 0;
   }
   .footer {
-    padding: 23px 33px;
+    padding: 23px 0;
   }
   .header__menu {
     max-width: 510px;
@@ -813,6 +839,9 @@
     height: 50px;
     font-size: 18px;
   }
+  .our-team__picture {
+    margin-top: 0;
+  }
   .footer__hr {
     display: block;
     width: 510px;
@@ -821,7 +850,15 @@
     margin: 16px 0;
   }
   .footer__sotial {
+    align-items: center;
     margin: 0 auto;
+  }
+  .footer__sotial_apps {
+    margin-right: 0;
+    max-width: 132px;
+  }
+  .footer__sotial_text {
+    display: flex;
   }
   .footer__nav {
     max-width: 510px;
@@ -899,8 +936,7 @@
 }
 
 .our-team__mobile {
-  padding: 60px 15px 94px 15px;
-  background: #F4F6F5;
+  padding: 60px 0 94px 0;
   display: none;
 }
 
@@ -987,27 +1023,28 @@
 }
 
 @media screen and (max-width: 320px) {
-  .header {
-    padding: 33px 15px 32px 15px;
-  }
-  .main {
+  .container {
     padding: 0 15px;
   }
-  .reproductions {
-    padding: 0 15px 70px 15px;
+  .header {
+    padding: 33px 0 32px 0;
   }
   .new-collection {
-    padding: 70px 15px;
+    padding: 70px 0;
   }
   .our-team {
-    padding: 59px 15px 94px 15px;
+    padding: 59px 0 94px 0;
   }
   .footer {
-    padding: 23px 15px;
+    padding: 23px 0;
   }
   .reproductions__buttons {
     overflow: scroll;
     gap: 20px;
+  }
+  .reproductions__buttons::-webkit-scrollbar {
+    width: 0;
+    height: 0;
   }
   .main__picture {
     display: none;
@@ -1071,7 +1108,7 @@
 }
 @media screen and (max-width: 575px) {
   .reproductions__article {
-    max-width: 290px;
+    max-width: none;
     width: 100%;
     margin: 0 auto;
   }
