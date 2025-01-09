@@ -6,6 +6,7 @@
     <title>Ink. House</title>
     <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -20,18 +21,21 @@
                     <button href="#" class="menu_button">Репродукции</button>
                     <button href="#" class="menu_button">Новинки</button>
                     <button href="#" class="menu_button">О нас</button>
-                    <a href="#" class="menu_img" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_3_996)">
-                        <path d="M9.25001 21.1667C9.75627 21.1667 10.1667 20.7563 10.1667 20.25C10.1667 19.7438 9.75627 19.3334 9.25001 19.3334C8.74375 19.3334 8.33334 19.7438 8.33334 20.25C8.33334 20.7563 8.74375 21.1667 9.25001 21.1667Z" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M19.3333 21.1667C19.8396 21.1667 20.25 20.7563 20.25 20.25C20.25 19.7438 19.8396 19.3334 19.3333 19.3334C18.8271 19.3334 18.4167 19.7438 18.4167 20.25C18.4167 20.7563 18.8271 21.1667 19.3333 21.1667Z" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M1.91666 1.91663H5.58332L8.03999 14.1908C8.12381 14.6128 8.35341 14.9919 8.68857 15.2617C9.02374 15.5315 9.44313 15.6749 9.87332 15.6666H18.7833C19.2135 15.6749 19.6329 15.5315 19.9681 15.2617C20.3032 14.9919 20.5328 14.6128 20.6167 14.1908L22.0833 6.49996H6.49999" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </g>
-                        <defs>
-                        <clipPath id="clip0_3_996">
-                        <rect width="22" height="22" fill="white" transform="translate(1 1)"/>
-                        </clipPath>
-                        </defs>
-                        </svg></a>
+                    <div class="header__menu_img">
+                        <a href="#" class="menu_img" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_3_996)">
+                            <path d="M9.25001 21.1667C9.75627 21.1667 10.1667 20.7563 10.1667 20.25C10.1667 19.7438 9.75627 19.3334 9.25001 19.3334C8.74375 19.3334 8.33334 19.7438 8.33334 20.25C8.33334 20.7563 8.74375 21.1667 9.25001 21.1667Z" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.3333 21.1667C19.8396 21.1667 20.25 20.7563 20.25 20.25C20.25 19.7438 19.8396 19.3334 19.3333 19.3334C18.8271 19.3334 18.4167 19.7438 18.4167 20.25C18.4167 20.7563 18.8271 21.1667 19.3333 21.1667Z" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M1.91666 1.91663H5.58332L8.03999 14.1908C8.12381 14.6128 8.35341 14.9919 8.68857 15.2617C9.02374 15.5315 9.44313 15.6749 9.87332 15.6666H18.7833C19.2135 15.6749 19.6329 15.5315 19.9681 15.2617C20.3032 14.9919 20.5328 14.6128 20.6167 14.1908L22.0833 6.49996H6.49999" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_3_996">
+                            <rect width="22" height="22" fill="white" transform="translate(1 1)"/>
+                            </clipPath>
+                            </defs>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
                 
             </div>
@@ -96,13 +100,12 @@
             <div class="reproductions__menu">
                 <p class="reproductions__menu_text">Репродукции</p>
                 <div class="reproductions__buttons">
-                    <button class="reproductions__menu_button reproductions__menu_button-active">Франция</button>
-                    <button class="reproductions__menu_button">Германия</button>
-                    <button class="reproductions__menu_button">Англия</button>
+                    <p class="reproductions__menu_button France reproductions__menu_button-active">Франция</p>
+                    <p class="reproductions__menu_button Germany">Германия</p>
+                    <p class="reproductions__menu_button England">Англия</p>
                 </div>
             </div>
-            <div class="reproductions__articles">
-                
+            <div class="reproductions__articles reproductions__articles_France ">
                 <article class="reproductions__article">
                     <img class="article__img" src="./img/france/03 (1).webp" alt="Охота Амура">
                     <p class="article__autor">Марсель Руссо</p>
@@ -151,7 +154,106 @@
                     <p class="article__price">20 00 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                
+            </div>
+            <div class="reproductions__articles reproductions__articles_Germany Articles_script">
+                <article class="reproductions__article">
+                    <img class="article__img" src="./img/germany/03-_7__1.webp" alt="Над городом">
+                    <p class="article__autor">Курт Вернер</p>
+                    <p class="article__name">Над городом</p>
+                    <p class="article__paper">Цветная литография (40х60) </p>
+                    <p class="article__price">16 000 руб</p>
+                    <button class="article__button"> В корзину</button>
+                </article>
+                <article class="reproductions__article">
+                    <img class="article__img" src="./img/germany/03-_8__1.webp" alt="Дама с собачкой">
+                    <p class="article__autor">Анри Селин</p>
+                    <p class="article__name">Дама с собачкой</p>
+                    <p class="article__paper">Акрил, бумага (50х80)</p>
+                    <p class="article__price">16 500 руб</p>
+                    <button class="article__button"> В корзину</button>
+                </article>
+                <article class="reproductions__article">
+                    <img class="article__img" src="./img/germany/03 (9).webp" alt="Процедура">
+                    <p class="article__autor">Франсуа Дюпон</p>
+                    <p class="article__name">Процедура</p>
+                    <p class="article__paper">Цветная литография (40х60)</p>
+                    <p class="article__price">20 000 руб</p>
+                    <button class="article__button"> В корзину</button>
+                </article>
+                <article class="reproductions__article">
+                    <img class="article__img" src="./img/germany/03 (10).webp" alt="Роза">
+                    <p class="article__autor">Луи Детуш</p>
+                    <p class="article__name">Роза</p>
+                    <p class="article__paper">Бумага, акрил (50х80)</p>
+                    <p class="article__price">12 000 руб</p>
+                    <button class="article__button"> В корзину</button>
+                </article>
+                <article class="reproductions__article">
+                    <img class="article__img" src="./img/germany/03 (11).webp" alt="Птичья трапеза">
+                    <p class="article__autor">Франсуа Дюпон</p>
+                    <p class="article__name">Птичья трапеза</p>
+                    <p class="article__paper">Цветная литография (40х60)</p>
+                    <p class="article__price">22 500 руб</p>
+                    <button class="article__button"> В корзину</button>
+                </article>
+                <article class="reproductions__article">
+                    <img class="article__img" src="./img/germany/03 (12).webp" alt="Пейзаж с рыбой">
+                    <p class="article__autor">Пьер Моранж</p>
+                    <p class="article__name">Пейзаж с рыбой</p>
+                    <p class="article__paper">Цветная литография (40х60)</p>
+                    <p class="article__price">20 00 руб</p>
+                    <button class="article__button"> В корзину</button>
+                </article>
+            </div>
+            <div class="reproductions__articles reproductions__articles_England Articles_script">
+                <article class="reproductions__article">
+                    <img class="article__img" src="./img/england/03 (13).webp" alt="Над городом">
+                    <p class="article__autor">Курт Вернер</p>
+                    <p class="article__name">Над городом</p>
+                    <p class="article__paper">Цветная литография (40х60) </p>
+                    <p class="article__price">16 000 руб</p>
+                    <button class="article__button"> В корзину</button>
+                </article>
+                <article class="reproductions__article">
+                    <img class="article__img" src="./img/england/03 (14).webp" alt="Дама с собачкой">
+                    <p class="article__autor">Анри Селин</p>
+                    <p class="article__name">Дама с собачкой</p>
+                    <p class="article__paper">Акрил, бумага (50х80)</p>
+                    <p class="article__price">16 500 руб</p>
+                    <button class="article__button"> В корзину</button>
+                </article>
+                <article class="reproductions__article">
+                    <img class="article__img" src="./img/england/03 (15).webp" alt="Процедура">
+                    <p class="article__autor">Франсуа Дюпон</p>
+                    <p class="article__name">Процедура</p>
+                    <p class="article__paper">Цветная литография (40х60)</p>
+                    <p class="article__price">20 000 руб</p>
+                    <button class="article__button"> В корзину</button>
+                </article>
+                <article class="reproductions__article">
+                    <img class="article__img" src="./img/england/03 (16).webp" alt="Роза">
+                    <p class="article__autor">Луи Детуш</p>
+                    <p class="article__name">Роза</p>
+                    <p class="article__paper">Бумага, акрил (50х80)</p>
+                    <p class="article__price">12 000 руб</p>
+                    <button class="article__button"> В корзину</button>
+                </article>
+                <article class="reproductions__article">
+                    <img class="article__img" src="./img/england/03 (17).webp" alt="Птичья трапеза">
+                    <p class="article__autor">Франсуа Дюпон</p>
+                    <p class="article__name">Птичья трапеза</p>
+                    <p class="article__paper">Цветная литография (40х60)</p>
+                    <p class="article__price">22 500 руб</p>
+                    <button class="article__button"> В корзину</button>
+                </article>
+                <article class="reproductions__article">
+                    <img class="article__img" src="./img/england/03 (18).webp" alt="Пейзаж с рыбой">
+                    <p class="article__autor">Пьер Моранж</p>
+                    <p class="article__name">Пейзаж с рыбой</p>
+                    <p class="article__paper">Цветная литография (40х60)</p>
+                    <p class="article__price">20 00 руб</p>
+                    <button class="article__button"> В корзину</button>
+                </article>
             </div>
         </div>
     </section>

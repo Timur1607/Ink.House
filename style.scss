@@ -1496,3 +1496,40 @@
         width: 100%;
     }
 }
+
+.Germany_script{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #376B44;
+    color: #FFF;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    border: 1px solid #376B44;
+    cursor: pointer;
+}
+.England_script{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #376B44;
+    color: #FFF;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    border: 1px solid #376B44;
+    cursor: pointer;
+}
+
+.Articles_script{
+    display: none;
+}
+// .GermanyArticles_script{
+//     display: none;
+// }
+// .EnglandArticles_script{
+//     display: none;
+// }
