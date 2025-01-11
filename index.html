@@ -9,7 +9,7 @@
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header__top">
                 <div class="header__logo logo">
@@ -18,9 +18,9 @@
                 </div>
                 <hr class="header__hr">
                 <div class="header__menu menu">
-                    <button href="#" class="menu_button">Репродукции</button>
-                    <button href="#" class="menu_button">Новинки</button>
-                    <button href="#" class="menu_button">О нас</button>
+                    <a href="#reproductions" class="menu_button">Репродукции</a>
+                    <a href="#news" class="menu_button">Новинки</a>
+                    <a href="#about" class="menu_button">О нас</a>
                     <div class="header__menu_img">
                         <a href="#" class="menu_img" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_3_996)">
@@ -36,8 +36,7 @@
                             </svg>
                         </a>
                     </div>
-                </div>
-                
+                </div> 
             </div>
         </div>
     </header>
@@ -90,31 +89,40 @@
                 <div class="main__desc">
                     <h2 class="main__title">Реплики картин от <span class="main__title_span">Ink. House</span></h2>
                     <p class="main__text">Высокое качество отрисовки на плотной бумаге или льняном холсте. Редкие произведения, доступные цены.</p>
-                    <button class="main__button">Продукция</button>
+                    <a class="main__button" href="#reproductions">Продукция</a>
                 </div>
             </div>
         </div>
     </main>
-    <section class="reproductions">
+    <section class="reproductions" id="reproductions">
         <div class="container">
             <div class="reproductions__menu">
-                <p class="reproductions__menu_text">Репродукции</p>
+                <p class="reproductions__menu_text" >Репродукции</p>
                 <div class="reproductions__buttons">
                     <p class="reproductions__menu_button France reproductions__menu_button-active">Франция</p>
                     <p class="reproductions__menu_button Germany">Германия</p>
                     <p class="reproductions__menu_button England">Англия</p>
                 </div>
             </div>
+        </div>
+        <div class="reproductions__menu_size">
+            <div class="reproductions__buttons_size">
+                <p class="reproductions__menu_button France reproductions__menu_button-active">Франция</p>
+                <p class="reproductions__menu_button Germany">Германия</p>
+                <p class="reproductions__menu_button England">Англия</p>
+            </div>
+        </div>
+        <div class="container">
             <div class="reproductions__articles reproductions__articles_France ">
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="1">
                     <img class="article__img" src="./img/france/03 (1).webp" alt="Охота Амура">
                     <p class="article__autor">Марсель Руссо</p>
                     <p class="article__name">Охота Амура</p>
                     <p class="article__paper">Холст, масло (50х80)</p>
                     <p class="article__price">14 500 руб</p>
-                    <button class="article__button"> В корзину</button>
+                    <button class="article__button" > В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="2">
                     <img class="article__img" src="./img/france/03 (2).webp" alt="Дама с собачкой">
                     <p class="article__autor">Анри Селин</p>
                     <p class="article__name">Дама с собачкой</p>
@@ -122,7 +130,7 @@
                     <p class="article__price">16 500 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="3">
                     <img class="article__img" src="./img/france/03 (3).webp" alt="Процедура">
                     <p class="article__autor">Франсуа Дюпон</p>
                     <p class="article__name">Процедура</p>
@@ -130,7 +138,7 @@
                     <p class="article__price">20 000 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="4">
                     <img class="article__img" src="./img/france/03 (4).webp" alt="Роза">
                     <p class="article__autor">Луи Детуш</p>
                     <p class="article__name">Роза</p>
@@ -138,7 +146,7 @@
                     <p class="article__price">12 000 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article"id="5">
                     <img class="article__img" src="./img/france/03 (5).webp" alt="Птичья трапеза">
                     <p class="article__autor">Франсуа Дюпон</p>
                     <p class="article__name">Птичья трапеза</p>
@@ -146,7 +154,7 @@
                     <p class="article__price">22 500 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="6">
                     <img class="article__img" src="./img/france/03 (6).webp" alt="Пейзаж с рыбой">
                     <p class="article__autor">Пьер Моранж</p>
                     <p class="article__name">Пейзаж с рыбой</p>
@@ -156,7 +164,7 @@
                 </article>
             </div>
             <div class="reproductions__articles reproductions__articles_Germany Articles_script">
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="7">
                     <img class="article__img" src="./img/germany/03-_7__1.webp" alt="Над городом">
                     <p class="article__autor">Курт Вернер</p>
                     <p class="article__name">Над городом</p>
@@ -164,7 +172,7 @@
                     <p class="article__price">16 000 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="8">
                     <img class="article__img" src="./img/germany/03-_8__1.webp" alt="Дама с собачкой">
                     <p class="article__autor">Анри Селин</p>
                     <p class="article__name">Дама с собачкой</p>
@@ -172,7 +180,7 @@
                     <p class="article__price">16 500 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="9">
                     <img class="article__img" src="./img/germany/03 (9).webp" alt="Процедура">
                     <p class="article__autor">Франсуа Дюпон</p>
                     <p class="article__name">Процедура</p>
@@ -180,7 +188,7 @@
                     <p class="article__price">20 000 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="10">
                     <img class="article__img" src="./img/germany/03 (10).webp" alt="Роза">
                     <p class="article__autor">Луи Детуш</p>
                     <p class="article__name">Роза</p>
@@ -188,7 +196,7 @@
                     <p class="article__price">12 000 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="11">
                     <img class="article__img" src="./img/germany/03 (11).webp" alt="Птичья трапеза">
                     <p class="article__autor">Франсуа Дюпон</p>
                     <p class="article__name">Птичья трапеза</p>
@@ -196,7 +204,7 @@
                     <p class="article__price">22 500 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="12">
                     <img class="article__img" src="./img/germany/03 (12).webp" alt="Пейзаж с рыбой">
                     <p class="article__autor">Пьер Моранж</p>
                     <p class="article__name">Пейзаж с рыбой</p>
@@ -206,7 +214,7 @@
                 </article>
             </div>
             <div class="reproductions__articles reproductions__articles_England Articles_script">
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="13">
                     <img class="article__img" src="./img/england/03 (13).webp" alt="Над городом">
                     <p class="article__autor">Курт Вернер</p>
                     <p class="article__name">Над городом</p>
@@ -214,7 +222,7 @@
                     <p class="article__price">16 000 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="14">
                     <img class="article__img" src="./img/england/03 (14).webp" alt="Дама с собачкой">
                     <p class="article__autor">Анри Селин</p>
                     <p class="article__name">Дама с собачкой</p>
@@ -222,7 +230,7 @@
                     <p class="article__price">16 500 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="15">
                     <img class="article__img" src="./img/england/03 (15).webp" alt="Процедура">
                     <p class="article__autor">Франсуа Дюпон</p>
                     <p class="article__name">Процедура</p>
@@ -230,7 +238,7 @@
                     <p class="article__price">20 000 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="16">
                     <img class="article__img" src="./img/england/03 (16).webp" alt="Роза">
                     <p class="article__autor">Луи Детуш</p>
                     <p class="article__name">Роза</p>
@@ -238,7 +246,7 @@
                     <p class="article__price">12 000 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="17">
                     <img class="article__img" src="./img/england/03 (17).webp" alt="Птичья трапеза">
                     <p class="article__autor">Франсуа Дюпон</p>
                     <p class="article__name">Птичья трапеза</p>
@@ -246,7 +254,7 @@
                     <p class="article__price">22 500 руб</p>
                     <button class="article__button"> В корзину</button>
                 </article>
-                <article class="reproductions__article">
+                <article class="reproductions__article" id="18">
                     <img class="article__img" src="./img/england/03 (18).webp" alt="Пейзаж с рыбой">
                     <p class="article__autor">Пьер Моранж</p>
                     <p class="article__name">Пейзаж с рыбой</p>
@@ -257,7 +265,7 @@
             </div>
         </div>
     </section>
-    <section class="new-collection">
+    <section class="new-collection" id="news">
         <div class="container">
             <div class="new-collection__all">
                 <div class="new-collection__logo">
@@ -272,7 +280,7 @@
             </div>
         </div>
     </section>
-    <section class="our-team">
+    <section class="our-team" id="about">
         <div class="container">
             <div class="our-team__all">
                 <div class="our-team__picture">
@@ -309,10 +317,10 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__all">
-                <div class="footer__info">
-                    <div class="footer__logo" href="#">
+                <div class="footer__info" >
+                    <div class="footer__logo" >
                         <img class="footer__logo_img" src="./img/svg/logo.svg" alt="Лого">
-                        <h2 class="footer__logo_text">Ink. House</h2>
+                        <a class="footer__logo_text" href="#header">Ink. House</a>
                     </div>
                     <div class="footer__location">
                         <a class="footer__location_number" href="#+79995435454">+7 (999) 543-54-54</a>
@@ -321,20 +329,20 @@
                 </div>
                 <div class="footer__nav">
                     <div class="footer__reprodactions">
-                        <a href="#header" class="footer__nav_h3">Репродукции</a>
-                        <a href="#" class="footer__nav_text">Франция</a>
-                        <a href="#" class="footer__nav_text">Германия</a>
-                        <a href="#" class="footer__nav_text">Англия</a>
+                        <a href="#reproductions" class="footer__nav_h3">Репродукции</a>
+                        <a href="#reproductions" class="footer__nav_text">Франция</a>
+                        <a href="#reproductions" class="footer__nav_text">Германия</a>
+                        <a href="#reproductions" class="footer__nav_text">Англия</a>
                     </div>
                     <div class="footer__news">
-                        <a href="#" class="footer__nav_h3">Новинки</a>
-                        <a href="#" class="footer__nav_text">2021</a>
-                        <a href="#" class="footer__nav_text">2020</a>
+                        <a href="#news" class="footer__nav_h3">Новинки</a>
+                        <a href="#news" class="footer__nav_text">2021</a>
+                        <a href="#news" class="footer__nav_text">2020</a>
                     </div>
                     <div class="footer__about-us">
-                        <a href="#" class="footer__nav_h3">О нас</a>
-                        <a href="#" class="footer__nav_text">Художники</a>
-                        <a href="#" class="footer__nav_text">Менеджеры</a>
+                        <a href="#about" class="footer__nav_h3">О нас</a>
+                        <a href="#about" class="footer__nav_text">Художники</a>
+                        <a href="#about" class="footer__nav_text">Менеджеры</a>
                     </div>
                 </div>
                 <hr class="footer__hr">

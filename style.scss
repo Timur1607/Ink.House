@@ -14,8 +14,6 @@
     padding: 0;
 }
 
-
-
 .header {
     padding: 33px 0 32px 0;
     background: #E1EDE6;
@@ -199,6 +197,7 @@
         cursor: pointer;
         background-color: transparent;
         transition: 0.5s;
+        text-decoration: none;
 
         &:hover {
             background: #598D66;
@@ -290,6 +289,10 @@
                 cursor: pointer;
             }
         }
+
+        &_size{
+            display: none;
+        }
     }
     
     &__buttons {
@@ -297,6 +300,11 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+
+        &_size{
+            display: flex;
+            gap: 32px;
+        }
     }
 
     &__articles {
@@ -592,6 +600,7 @@
             font-family: "Raleway", sans-serif;
             font-size: 20px;
             font-weight: 700;
+            text-decoration: none;
         }
     }
 
@@ -753,6 +762,160 @@
     display: none;
 }
 
+
+
+.our-team__mobile_picture{
+    display: none;
+    // width: 100%;
+}
+
+.mobile__picture{
+    width: 100%;
+}
+
+
+
+
+.burger__label{
+    z-index: 10;
+    // position: fixed;
+    width: 30px;
+}
+
+.mobile__menu_burger{
+    // background-image: url(./img/svg/burger.svg);
+    position: absolute;
+    width: 23px;
+    height: 30px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+}
+
+.mobile__menu_burger input:checked ~ .menu__burger{
+    right: 0;
+}
+
+.mobile__menu_burger input:checked ~ .burger__label .burger__line{
+    transform: rotate(45deg);
+}
+
+.mobile__menu_burger input:checked ~ .burger__label .burger__line::after{
+    transform: rotate(90deg);
+    top: 0;
+}
+
+.mobile__menu_burger input:checked ~ .burger__label .burger__line::before{
+    transform: rotate(0deg);
+    top: 0;
+}
+
+#chekbox{
+    display: none;
+}
+
+.our-team__mobile{
+    padding: 60px 0 94px 0;
+    // background: #F4F6F5;
+    display: none;
+}
+
+.menu{
+    &_img_mobile{
+        display: flex;
+    }
+    &__ul{
+        text-align: start;
+        margin-bottom: 68px;
+    }
+    &__li{
+        text-align: start;
+        // margin-bottom: 67px;
+    }
+    &__a{
+        color: #2C2D35;
+        font-family: "Raleway", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    &__burger{
+        background-color: #E1EDE6;
+        position: fixed;
+        top: 0;
+        right: 100%;
+        height: 433px;
+        width: 100%;
+        // padding: 16px 15px;
+        list-style: none;
+        transition: 0.5s;
+        text-align: start;
+
+        &_nav{
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 117px;
+            height: 163px;
+            background-color: #E1EDE6;
+            margin-top: 76px;
+        }
+
+        &_top{
+            width: 100%;
+            height: 50px;
+            background-color: #fff;
+        }
+
+        &_logo{
+            display: flex;
+            width: 143px;
+            display: flex;
+            justify-content: space-between;
+            height: 35px;
+            margin: 0 auto;
+            margin-top: 15px;
+            margin-bottom: 16px;
+            background-color: #FFF;
+        }
+    }
+}
+
+.burger__line, .burger__line::before, .burger__line::after{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #4C5866;
+    border-radius: 4px;
+}
+.burger__line::before{
+    content:"";
+    top: -8px;
+}
+.burger__line::after{
+    content:"";
+    top:8px;
+}
+.menu__burger_div{
+    height: 100%;
+    background-color: #E1EDE6;
+}
+
+.mobile__logo{
+    display: none;
+}
+
+.mobile__menu{
+    display: none;
+}
+
 @media screen and (max-width:900px){
     .our-team__all{
         padding-top: 40px;
@@ -860,13 +1023,32 @@
 
 }
 
-.our-team__mobile_picture{
-    display: none;
-    // width: 100%;
+@media screen and (max-width:710px) {
+    .header__hr {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: #C3D1C6;
+        margin: 16px 0;
+    }
+
+    .header__logo{
+        margin: 0 auto;
+    }
+    .header__menu{
+        max-width: 710px;
+        width: 100%;
+    }
+
+    .header__top{
+        flex-wrap: wrap;
+    }
 }
 
-.mobile__picture{
-    width: 100%;
+@media screen and (max-width: 704px){
+    .reproductions__menu_text{
+        margin-bottom: 20px;
+    }
 }
 
 @media screen and (max-width: 630px){
@@ -909,8 +1091,6 @@
     }
 }
 
-
-
 @media screen and (max-width: 576px) {
 
     .container{
@@ -943,6 +1123,10 @@
     }
     .reproductions__menu{
         gap: 20px;
+
+        &_text{
+            margin-bottom: 0;
+        }
     }
     .main__top{
         padding: 50px 0;
@@ -1061,255 +1245,6 @@
     }
 }
 
-
-.burger__label{
-    z-index: 10;
-    // position: fixed;
-    width: 30px;
-}
-
-.mobile__menu_burger{
-    // background-image: url(./img/svg/burger.svg);
-    position: absolute;
-    width: 23px;
-    height: 30px;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-}
-
-.mobile__menu_burger input:checked ~ .menu__burger{
-    right: 0;
-}
-
-.mobile__menu_burger input:checked ~ .burger__label .burger__line{
-    transform: rotate(45deg);
-}
-
-.mobile__menu_burger input:checked ~ .burger__label .burger__line::after{
-    transform: rotate(90deg);
-    top: 0;
-}
-
-.mobile__menu_burger input:checked ~ .burger__label .burger__line::before{
-    transform: rotate(0deg);
-    top: 0;
-}
-
-.menu__burger{
-    background-color: #E1EDE6;
-    position: fixed;
-    top: 0;
-    right: 100%;
-    height: 433px;
-    width: 100%;
-    // padding: 16px 15px;
-    list-style: none;
-    transition: 0.5s;
-    text-align: start;
-    
-}
-
-#chekbox{
-    display: none;
-}
-
-
-
-.our-team__mobile{
-    padding: 60px 0 94px 0;
-    // background: #F4F6F5;
-    display: none;
-}
-
-.menu_img_mobile{
-    display: flex;
-}
-
-.menu__ul{
-    text-align: start;
-    margin-bottom: 68px;
-}
-
-.menu__li{
-    text-align: start;
-    // margin-bottom: 67px;
-}
-
-.menu__a{
-    color: #2C2D35;
-    font-family: "Raleway", sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.burger__line, .burger__line::before, .burger__line::after{
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #4C5866;
-    border-radius: 4px;
-}
-
-.burger__line::before{
-    content:"";
-    top: -8px;
-}
-
-
-.burger__line::after{
-    content:"";
-    top:8px;
-}
-
-.menu__burger_div{
-    height: 100%;
-    background-color: #E1EDE6;
-}
-
-.menu__burger_nav{
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 117px;
-    height: 163px;
-    background-color: #E1EDE6;
-    margin-top: 76px;
-}
-
-.menu__burger_top{
-    width: 100%;
-    height: 50px;
-    background-color: #fff;
-}
-
-.menu__burger_logo{
-    display: flex;
-    width: 143px;
-    display: flex;
-    justify-content: space-between;
-    height: 35px;
-    margin: 0 auto;
-    margin-top: 15px;
-    margin-bottom: 16px;
-    background-color: #FFF;
-}
-
-.mobile__logo{
-    display: none;
-}
-
-.mobile__menu{
-    display: none;
-}
-
-@media screen and (max-width: 320px) {
-
-    .container{
-        padding: 0 15px;
-    }
-    .header{ padding: 33px 0 32px 0; }
-    .new-collection{ padding: 70px 0; }
-    .our-team{ padding: 59px 0 94px 0; }
-    .footer{ padding: 23px 0; }
-
-    .reproductions__buttons{
-        overflow: scroll;
-        gap: 20px;
-        &::-webkit-scrollbar {
-            width: 0;
-            height: 0;
-        }
-    }
-
-    .main__picture{
-        display: none;
-    }
-
-    .main__img{
-        display: none;
-    }
-
-    .header__menu{
-        display: none;
-    }
-
-    .header__hr{
-        display: none;
-    }
-
-    .header{
-        display: none;
-    }
-
-    .our-team__text1{
-        font-size: 24px;
-    }
-
-    .our-team__text2{
-        font-size: 16px;
-    }
-
-    .header__mobile{
-        display: flex;
-        flex-direction: column;
-    }
-    
-
-    .our-team__mobile{
-        display: block;
-    }
-
-    .our-team__picture{
-        display: none;
-    }
-
-    .our-team{
-        display: none;
-    }
-
-    .our-team__info{
-        padding-top: 30px;
-    }
-
-    
-
-    .menu__burger_nav{
-        display: flex;
-    }
-}
-
-
-
-@media screen and (max-width:710px) {
-    .header__hr {
-        display: block;
-        width: 100%;
-        height: 1px;
-        background: #C3D1C6;
-        margin: 16px 0;
-    }
-
-    .header__logo{
-        margin: 0 auto;
-    }
-    .header__menu{
-        max-width: 710px;
-        width: 100%;
-    }
-
-    .header__top{
-        flex-wrap: wrap;
-    }
-}
-
 @media screen and (max-width:575px){
     .reproductions__article {
         max-width: none;
@@ -1320,6 +1255,25 @@
     .reproductions__buttons{
         overflow: scroll;
         gap: 20px;
+    }
+}
+
+@media screen and (max-width:483px){
+    .reproductions{
+        &__buttons{
+            display: none;
+        }
+
+        &__menu{
+            margin-bottom: 20px;
+        }
+
+        &__menu_size{
+            display: flex;
+            overflow: scroll;
+            padding: 0 33px;
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -1360,11 +1314,7 @@
             gap: 20px;
             background: #E1EDE6;
         }
-
-        
     }
-
-    
 
     .footer__mobile1{
         display: flex;
@@ -1494,6 +1444,84 @@
 
     .new-collection__button {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .container{
+        padding: 0 15px;
+    }
+    .header{ padding: 33px 0 32px 0; }
+    .new-collection{ padding: 70px 0; }
+    .our-team{ padding: 59px 0 94px 0; }
+    .footer{ padding: 23px 0; }
+
+    .reproductions__buttons{
+        overflow: scroll;
+        gap: 20px;
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    }
+
+    .main__picture{
+        display: none;
+    }
+
+    .main__img{
+        display: none;
+    }
+
+    .header__menu{
+        display: none;
+    }
+
+    .header__hr{
+        display: none;
+    }
+
+    .header{
+        display: none;
+    }
+
+    .our-team__text1{
+        font-size: 24px;
+    }
+
+    .our-team__text2{
+        font-size: 16px;
+    }
+
+    .header__mobile{
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    .our-team__mobile{
+        display: block;
+    }
+
+    .our-team__picture{
+        display: none;
+    }
+
+    .our-team{
+        display: none;
+    }
+
+    .our-team__info{
+        padding-top: 30px;
+    }
+
+    .reproductions__menu_size{
+        padding: 0 20px;
+    }
+
+    .menu__burger_nav{
+        display: flex;
     }
 }
 
