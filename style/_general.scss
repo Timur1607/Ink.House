@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "Raleway";
+    src:
+        url(./font/Raleway-VariableFont_wght.eot),
+        url(./font/Raleway-VariableFont_wght.woff2),
+        url(./font/Raleway-VariableFont_wght.ttf),
+        url(./font/Raleway-VariableFont_wght.otf),
+        url(./font/Raleway-VariableFont_wght.woff);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1188px;
+    padding: 0 39px;
+    width: 100%;
+    margin: 0 auto;
+}

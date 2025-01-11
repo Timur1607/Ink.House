@@ -4,6 +4,9 @@ let England = document.querySelector('.England')
 let buyButton = document.querySelectorAll('.article__button')
 let basket = document.querySelector('.header__menu_img')
 
+let burger = document.querySelector('.header__menu_burger')
+let burgerMenu = document.querySelector('.burger__menu')
+let burgerMenuLink = document.querySelectorAll('.burger__menu_link')
 let FranceArticles = document.querySelector('.reproductions__articles_France')
 let GermanyArticles = document.querySelector('.reproductions__articles_Germany')
 let EnglandArticles = document.querySelector('.reproductions__articles_England')
@@ -50,6 +53,30 @@ France.addEventListener('click', () => {
 
 England.addEventListener('click', () => {
     openEnglandReproductions()
+})
+
+let n = null
+burger.addEventListener('click', () => {
+    if(n === null){
+        burgerMenu.style.setProperty('left', '0')
+        burgerMenu.style.setProperty('position', 'sticky')
+        burgerMenu.style.setProperty('top', '67px')
+        burgerMenu.style.setProperty('height', '100vh')
+        n++
+    } else if(n === 1){
+        burgerMenu.style.setProperty('position', 'absolute')
+        burgerMenu.style.setProperty('left', '-100%')
+        burgerMenu.style.setProperty('height', 'auto')
+        n = null
+    }
+
+    for(el of burgerMenuLink){
+        el.addEventListener('click', () => {
+            burgerMenu.style.setProperty('position', 'absolute')
+            burgerMenu.style.setProperty('left', '-100%')
+            burgerMenu.style.setProperty('height', 'auto')
+        })
+    }
 })
 // el.parentElement.getAttribute('id')
 

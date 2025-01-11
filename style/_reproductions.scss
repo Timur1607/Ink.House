@@ -1,0 +1,194 @@
+
+
+.reproductions {
+    background-color: #F4F6F5;
+    padding: 69px 0 70px 0;
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        align-content: center;
+        // overflow: scroll;
+
+        &_text {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            color: #2C2D35;
+            font-family: "Raleway", sans-serif;
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 110%;
+        }
+
+        &_button {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background: #D4E8D9;
+            color: #2C2D35;
+            font-family: "Raleway", sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            border: 2px solid #D4E8D9;
+            cursor: pointer;
+            transition: 0.5s;
+            height: 43px;
+
+            
+
+            &:hover {
+                background: #598D66;
+                border: 2px solid #598D66;
+                color: #FFF;
+            }
+
+            &:focus{
+                border: 2px solid #598D66;
+                background: #D4E8D9;
+                color: #2C2D35;
+            }
+
+            &:active{
+                background: #376B44;
+                color: #F4F6F5;
+            }
+
+            &-active {
+                display: flex;
+                align-items: center;
+                padding: 10px 20px;
+                border-radius: 20px;
+                background-color: #376B44;
+                color: #FFF;
+                font-family: "Raleway", sans-serif;
+                font-size: 20px;
+                font-weight: 500;
+                border: 1px solid #376B44;
+                cursor: pointer;
+            }
+        }
+
+        &_size{
+            display: none;
+        }
+    }
+    
+    &__buttons {
+        max-width: 433px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+        &_size{
+            display: flex;
+            gap: 32px;
+        }
+    }
+
+    &__articles {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        // display: flex;
+        // justify-content: space-between;
+        // flex-wrap: wrap;
+    }
+
+    &__article {
+        width: 100%;
+        // height: 730px;
+        padding: 20px 20px 30px 20px;
+        background: #E1EDE6;
+        // margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.article{
+    &__img {
+        display: block;
+        overflow: hidden;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    &__autor {
+        color: #86928B;
+        font-family: "Raleway", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    &__name {
+        color: #2C2D35;
+        font-family: "Raleway", sans-serif;
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 8px;
+    }
+
+    &__paper {
+        color: #2C2D35;
+        font-family: "Raleway", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: auto;
+    }
+
+    &__price {
+        color: #598D66;
+        font-family: "Raleway", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+
+    &__button {
+        display: flex;
+        width: 100%;
+        height: 65px;
+        padding: 20px 60px;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
+        border: 1px solid #598D66;
+        color: #598D66;
+        font-family: "Raleway", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        background-color: transparent;
+        cursor: pointer;
+        transition: 0.5s;
+        padding: 20px 20px;
+
+        &:hover {
+            background: #598D66;
+            color: #FFF;
+        }
+
+        &:active {
+            background: #376B44;
+            color: #FFF;
+        }
+        
+        &:focus {
+            border: 1px solid #598D66;
+            background: #D4E8D9;
+            color: #598D66;
+        }
+    }
+}
