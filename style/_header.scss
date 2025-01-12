@@ -45,6 +45,23 @@ body{
             justify-content: space-between;
         }
 
+        &_img{
+            position: relative;
+
+            &_numb{
+                color: #FFF;
+                font-family: "Raleway", sans-serif;
+                font-size: 12px;
+                font-weight: 500;
+                text-decoration: none;
+                background-color: transparent;
+                cursor: pointer;
+                position: absolute;
+                top: 0px;
+                left: 3px;
+            }
+        }
+
         &_burger{
             display: none;
             width: 30px;
@@ -130,6 +147,145 @@ body{
     }
 }
 
+.basket{
+    display: none;
+    max-width: 1188px;
+    width: 100%;
+    background: #E1EDE6;
+    position: fixed;
+    top: 50px;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &__top{
+        display: flex;
+        padding: 10px;
+        justify-content: flex-end;
+        position: relative;
+
+        &_text{
+            font-family: "Raleway", sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        &_exit{
+            width: 30px;
+            height: 30px;
+            background-color: #598D66;
+            position: relative;
+            cursor: pointer;
+
+            &_span1{
+                width: 20px;
+                height: 3px; 
+                background-color: #4C5866;
+                position: absolute; 
+                top: 74%;
+                left: 35%;
+                transform: translateX(-50%) translateY(-50%);
+                rotate: 45deg;
+                
+            }
+            &_span2{
+                width: 20px;
+                height: 3px; 
+                background-color: #4C5866;
+                position: absolute; 
+                top: 25%;
+                left: 44%;
+                transform: translateX(-50%) translateY(-50%);
+                rotate: -45deg;
+            }
+        }
+    }
+
+    &__main{
+        background: #F4F6F5;
+        min-width: 250px;
+
+        &_text{
+            font-family: "Raleway", sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none; 
+            padding: 50px 50px 200px 50px;
+            display: flex;
+            justify-content: center;
+            color: #4C5866;
+        }
+
+        &_nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 25px 70px 25px 40px;
+
+            &_text{
+                font-family: "Raleway", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                text-decoration: none; 
+            }
+            &_name{
+                font-family: "Raleway", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                text-decoration: none; 
+            }
+            &_cost{
+                font-family: "Raleway", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                text-decoration: none; 
+            }
+        }
+
+        &_articles{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        &_article{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &_img{
+                width: 80px;
+                height: 120px;
+            }
+
+            &_name{
+                font-family: "Raleway", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                text-decoration: none; 
+                display: flex;
+                align-items: center;
+            }
+
+            &_cost{
+                font-family: "Raleway", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                text-decoration: none; 
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
+
 .menu_button {
     border: none;
     color: #2C2D35;
@@ -173,6 +329,7 @@ body{
 
 .menu_img{
     transition: 0.5s;
+    
 
     path{
         transition: 0.5s;
