@@ -8,6 +8,7 @@ let NumbOfArticles = document.querySelector('.header__menu_img_numb')
 let inBasket = document.querySelector('.basket')
 let inBasketText = document.querySelector('.basket__main_text')
 let basketExit = document.querySelector('.basket__top_exit')
+let basketNav = document.querySelector('.basket__main_nav')
 
 let burger = document.querySelector('.header__menu_burger')
 let burgerMenu = document.querySelector('.burger__menu')
@@ -89,6 +90,21 @@ burger.addEventListener('click', () => {
 for(el of buyButton){
     let article = el.parentElement
     el.addEventListener('click', () => {
+
+        let check = false
+        for(let i = 0; i < arr.length; i++){
+            if(article.getAttribute('id') === arr[i].id){
+                check = true
+                openTheBasket()
+            }
+        }
+        if(check === true){
+            openTheBasket()
+        } else{
+            arr.push({"id": article.getAttribute('id'),"picture": article.children[0].src, "author": article.children[1].textContent, "name": article.children[2].textContent,"material": article.children[3].textContent, "cost": article.children[4].textContent, "delete": false})
+            localStorage.setItem("InkHouse", JSON.stringify(arr))
+        }
+
         basket.innerHTML = `
             <a class="menu__img" href="#">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,20 +121,20 @@ for(el of buyButton){
                     </defs>
                 </svg>
             </a>
-            <p class="header__menu_img_numb">${arr.length+1}</p>
+            <p class="header__menu_img_numb">${(check ? arr.length-1 : arr.length)}</p>
         `
+        console.log(check ? arr.length : arr.length+1);
+        
+
         article.children[5].style.background = '#376B44'
         article.children[5].style.color = '#FFF'
-        arr.push({"id": article.getAttribute('id'),"picture": article.children[0].src, "author": article.children[1].textContent, "name": article.children[2].textContent,"material": article.children[3].textContent, "cost": article.children[4].textContent})
-        localStorage.setItem("InkHouse", JSON.stringify(arr))
         article.children[5].textContent = `В корзине`
         // console.log(article.children[1].textContent);
     })
 }
 
 let div = document.querySelector('.basket__main_articles')
-basket.addEventListener('click', () => {
-    
+let openTheBasket = () => {
     inBasket.style.setProperty("display", "block")
     if(arr !== null){
         inBasketText.style.display = 'none'
@@ -126,6 +142,7 @@ basket.addEventListener('click', () => {
     for(let i = 0; i < arr.length; i++){
         let article = document.createElement('article')
         article.classList.add("basket__main_article")
+        article.id = `${arr[i].id}`
         article.innerHTML = `
             <img class="basket__main_article_img" src="${arr[i].picture}" alt="">
             <p class="basket__main_article_name">${arr[i].name}</p>
@@ -136,8 +153,46 @@ basket.addEventListener('click', () => {
             </div>
         `
         div.appendChild(article)
+        
+        let deleteArticle = article.querySelector('.basket__top_exit')
+        deleteArticle.addEventListener('click', () =>{
+            console.log('привет');
+            deleteArticle.parentElement.style.display = 'none'
+            
+            
+            if(arr.length === 0){
+                basketNav.style.display = 'none'
+                inBasketText.style.display = 'flex'
+                NumbOfArticles.textContent = `${arr.length}`
+                basket.innerHTML = `
+                    <a href="#" class="menu_img" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_3_996)">
+                        <path d="M9.25001 21.1667C9.75627 21.1667 10.1667 20.7563 10.1667 20.25C10.1667 19.7438 9.75627 19.3334 9.25001 19.3334C8.74375 19.3334 8.33334 19.7438 8.33334 20.25C8.33334 20.7563 8.74375 21.1667 9.25001 21.1667Z" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19.3333 21.1667C19.8396 21.1667 20.25 20.7563 20.25 20.25C20.25 19.7438 19.8396 19.3334 19.3333 19.3334C18.8271 19.3334 18.4167 19.7438 18.4167 20.25C18.4167 20.7563 18.8271 21.1667 19.3333 21.1667Z" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M1.91666 1.91663H5.58332L8.03999 14.1908C8.12381 14.6128 8.35341 14.9919 8.68857 15.2617C9.02374 15.5315 9.44313 15.6749 9.87332 15.6666H18.7833C19.2135 15.6749 19.6329 15.5315 19.9681 15.2617C20.3032 14.9919 20.5328 14.6128 20.6167 14.1908L22.0833 6.49996H6.49999" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_3_996">
+                        <rect width="22" height="22" fill="white" transform="translate(1 1)"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                        <p class="header__menu_img_numb"></p>
+                    </a>
+                `
+            }
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i].id === article.id){
+                    arr[i].delete = true
+                    arr = arr.filter(arr => arr[i].delete !== false)
+                    localStorage.setItem("InkHouse", JSON.stringify(arr))
+                }
+            }
+        })
     }
-})
+}
+
+basket.addEventListener('click', () => openTheBasket())
 
 basketExit.addEventListener('click', () => {
     inBasket.style.setProperty("display", "none")
@@ -146,13 +201,30 @@ basketExit.addEventListener('click', () => {
 if(localStorage.getItem('InkHouse') !== null){
     arr = JSON.parse(localStorage.InkHouse)
     for(let i = 0; i < arr.length; i++){
-        console.log(arr[i].id);
         let article = document.getElementById(`${arr[i].id}`)
         article.children[5].textContent = `В корзине`
         article.children[5].style.background = '#376B44'
         article.children[5].style.color = '#FFF'
     }
-    basket.innerHTML = `
+    if(arr.length === 0){
+        basket.innerHTML = `
+                    <a href="#" class="menu_img" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_3_996)">
+                        <path d="M9.25001 21.1667C9.75627 21.1667 10.1667 20.7563 10.1667 20.25C10.1667 19.7438 9.75627 19.3334 9.25001 19.3334C8.74375 19.3334 8.33334 19.7438 8.33334 20.25C8.33334 20.7563 8.74375 21.1667 9.25001 21.1667Z" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19.3333 21.1667C19.8396 21.1667 20.25 20.7563 20.25 20.25C20.25 19.7438 19.8396 19.3334 19.3333 19.3334C18.8271 19.3334 18.4167 19.7438 18.4167 20.25C18.4167 20.7563 18.8271 21.1667 19.3333 21.1667Z" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M1.91666 1.91663H5.58332L8.03999 14.1908C8.12381 14.6128 8.35341 14.9919 8.68857 15.2617C9.02374 15.5315 9.44313 15.6749 9.87332 15.6666H18.7833C19.2135 15.6749 19.6329 15.5315 19.9681 15.2617C20.3032 14.9919 20.5328 14.6128 20.6167 14.1908L22.0833 6.49996H6.49999" stroke="#2C2D35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_3_996">
+                        <rect width="22" height="22" fill="white" transform="translate(1 1)"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                        <p class="header__menu_img_numb"></p>
+                    </a>
+                `
+    } else{
+        basket.innerHTML = `
             <a class="menu__img" href="#">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_4_1148)">
@@ -170,5 +242,5 @@ if(localStorage.getItem('InkHouse') !== null){
             </a>
             <p class="header__menu_img_numb">${arr.length}</p>
         `
-        
+    }
 }
