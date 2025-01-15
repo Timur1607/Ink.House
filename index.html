@@ -6,7 +6,7 @@
     <title>Ink. House</title>
     <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
+    <script src="./script.js" type="module" defer></script>
 </head>
 <body>
     <header class="header" id="header">
@@ -46,7 +46,7 @@
                         </clipPath>
                         </defs>
                         </svg>
-                        <p class="header__menu_img_numb"></p>
+                        <span class="header__menu_img_span"><p class="header__menu_img_numb"></p></span>
                     </a>
                 </div>
             </div>
@@ -98,163 +98,11 @@
             <div class="reproductions__menu">
                 <p class="reproductions__menu_text" >Репродукции</p>
                 <div class="reproductions__buttons">
-                    <p class="reproductions__menu_button France reproductions__menu_button-active">Франция</p>
-                    <p class="reproductions__menu_button Germany">Германия</p>
-                    <p class="reproductions__menu_button England">Англия</p>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="reproductions__articles reproductions__articles_France ">
-                <article class="reproductions__article" id="1">
-                    <img class="article__img" src="./img/france/03 (1).webp" alt="Охота Амура">
-                    <p class="article__autor">Марсель Руссо</p>
-                    <p class="article__name">Охота Амура</p>
-                    <p class="article__paper">Холст, масло (50х80)</p>
-                    <p class="article__price">14 500 руб</p>
-                    <button class="article__button" > В корзину</button>
-                </article>
-                <article class="reproductions__article" id="2">
-                    <img class="article__img" src="./img/france/03 (2).webp" alt="Дама с собачкой">
-                    <p class="article__autor">Анри Селин</p>
-                    <p class="article__name">Дама с собачкой</p>
-                    <p class="article__paper">Акрил, бумага (50х80)</p>
-                    <p class="article__price">16 500 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article" id="3">
-                    <img class="article__img" src="./img/france/03 (3).webp" alt="Процедура">
-                    <p class="article__autor">Франсуа Дюпон</p>
-                    <p class="article__name">Процедура</p>
-                    <p class="article__paper">Цветная литография (40х60)</p>
-                    <p class="article__price">20 000 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article" id="4">
-                    <img class="article__img" src="./img/france/03 (4).webp" alt="Роза">
-                    <p class="article__autor">Луи Детуш</p>
-                    <p class="article__name">Роза</p>
-                    <p class="article__paper">Бумага, акрил (50х80)</p>
-                    <p class="article__price">12 000 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article"id="5">
-                    <img class="article__img" src="./img/france/03 (5).webp" alt="Птичья трапеза">
-                    <p class="article__autor">Франсуа Дюпон</p>
-                    <p class="article__name">Птичья трапеза</p>
-                    <p class="article__paper">Цветная литография (40х60)</p>
-                    <p class="article__price">22 500 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article" id="6">
-                    <img class="article__img" src="./img/france/03 (6).webp" alt="Пейзаж с рыбой">
-                    <p class="article__autor">Пьер Моранж</p>
-                    <p class="article__name">Пейзаж с рыбой</p>
-                    <p class="article__paper">Цветная литография (40х60)</p>
-                    <p class="article__price">20 000 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-            </div>
-            <div class="reproductions__articles reproductions__articles_Germany Articles_script">
-                <article class="reproductions__article" id="7">
-                    <img class="article__img" src="./img/germany/03-_7__1.webp" alt="Над городом">
-                    <p class="article__autor">Курт Вернер</p>
-                    <p class="article__name">Над городом</p>
-                    <p class="article__paper">Цветная литография (40х60) </p>
-                    <p class="article__price">16 000 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article" id="8">
-                    <img class="article__img" src="./img/germany/03-_8__1.webp" alt="Дама с собачкой">
-                    <p class="article__autor">Макс Рихтер</p>
-                    <p class="article__name">Птенцы</p>
-                    <p class="article__paper">Цветная литография (40х60) </p>
-                    <p class="article__price">14 500 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article" id="9">
-                    <img class="article__img" src="./img/germany/03 (9).webp" alt="Процедура">
-                    <p class="article__autor">Мартин Майер</p>
-                    <p class="article__name">Среди листьев</p>
-                    <p class="article__paper">Цветная литография (40х60) </p>
-                    <p class="article__price">20 000 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article" id="10">
-                    <img class="article__img" src="./img/germany/03 (10).webp" alt="Роза">
-                    <p class="article__autor">Герман Беккер</p>
-                    <p class="article__name">Яркая птица</p>
-                    <p class="article__paper">Цветная литография (40х60) </p>
-                    <p class="article__price">13 000 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article" id="11">
-                    <img class="article__img" src="./img/germany/03 (11).webp" alt="Птичья трапеза">
-                    <p class="article__autor">Вульй Бауэр</p>
-                    <p class="article__name">Дятлы</p>
-                    <p class="article__paper">Бумага, акрил (50х80) </p>
-                    <p class="article__price">20 000 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article" id="12">
-                    <img class="article__img" src="./img/germany/03 (12).webp" alt="Пейзаж с рыбой">
-                    <p class="article__autor">Вальтер Хартман</p>
-                    <p class="article__name">Большие воды</p>
-                    <p class="article__paper">Бумага, акрил (50х80) </p>
-                    <p class="article__price">20 000 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-            </div>
-            <div class="reproductions__articles reproductions__articles_England Articles_script">
-                <article class="reproductions__article" id="13">
-                    <img class="article__img" src="./img/england/03 (13).webp" alt="Над городом">
-                    <p class="article__autor">Пол Смит</p>
-                    <p class="article__name">Дикий зверь</p>
-                    <p class="article__paper">Акварель, бумага (50х80) </p>
-                    <p class="article__price">19 500 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article" id="14">
-                    <img class="article__img" src="./img/england/03 (14).webp" alt="Дама с собачкой">
-                    <p class="article__autor">Джон Уайт</p>
-                    <p class="article__name">Скалистый берег</p>
-                    <p class="article__paper">Цветная литография (40х60) </p>
-                    <p class="article__price">17 500 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article" id="15">
-                    <img class="article__img" src="./img/england/03 (15).webp" alt="Процедура">
-                    <p class="article__autor">Джим Уотсон</p>
-                    <p class="article__name">Река и горы</p>
-                    <p class="article__paper">Акварель, бумага (50х80) </p>
-                    <p class="article__price">20 500 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article" id="16">
-                    <img class="article__img" src="./img/england/03 (16).webp" alt="Роза">
-                    <p class="article__autor">Юджин Зиллион</p>
-                    <p class="article__name">Белый попугай</p>
-                    <p class="article__paper">Цветная литография (40х60) </p>
-                    <p class="article__price">15 500 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article" id="17">
-                    <img class="article__img" src="./img/england/03 (17).webp" alt="Птичья трапеза">
-                    <p class="article__autor">Эрик Гиллман</p>
-                    <p class="article__name">Ночная рыба</p>
-                    <p class="article__paper">Бумага, акрил (50х80) </p>
-                    <p class="article__price">12 500 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-                <article class="reproductions__article" id="18">
-                    <img class="article__img" src="./img/england/03 (18).webp" alt="Пейзаж с рыбой">
-                    <p class="article__autor">Альфред Барр</p>
-                    <p class="article__name">Рыжий кот</p>
-                    <p class="article__paper">Цветная литография (40х60) </p>
-                    <p class="article__price">22 000 руб</p>
-                    <button class="article__button"> В корзину</button>
-                </article>
-            </div>
+        <div class="container container_script">
+
         </div>
     </section>
     <section class="new-collection" id="news">
