@@ -93,6 +93,7 @@ let basketNav = document.querySelector('.basket__main_nav')
 let basketPrice = document.querySelector('.basket__price')
 let basketPriceText = document.querySelector('.basket__price_text')
 let price = 0
+let deleteAll = document.querySelector('.basket__price_delete')
 
 let burger = document.querySelector('.header__menu_burger')
 let burgerMenu = document.querySelector('.burger__menu')
@@ -101,9 +102,12 @@ let FranceArticles = document.querySelector('.reproductions__articles_France')
 let GermanyArticles = document.querySelector('.reproductions__articles_Germany')
 let EnglandArticles = document.querySelector('.reproductions__articles_England')
 
-let footerG = document.querySelector('.footer__nav_text')
-let footerF = document.querySelector('.footer__nav_text')
-let footerE = document.querySelector('.footer__nav_text')
+let footerG = document.querySelector('.footer__nav_text_Germany ')
+let footerF = document.querySelector('.footer__nav_text_France')
+let footerE = document.querySelector('.footer__nav_text_England')
+let footerGm = document.querySelector('.footer__nav_text_Germany1 ')
+let footerFm = document.querySelector('.footer__nav_text_France1')
+let footerEm = document.querySelector('.footer__nav_text_England1')
 
 let headerLogo = document.querySelector('.container__mobile')
 
@@ -150,7 +154,9 @@ Germany.addEventListener('click', () => {
 })
 footerG.addEventListener('click', () => {
     openGermanyReproductions()
-    console.log('work');
+})
+footerGm.addEventListener('click', () => {
+    openGermanyReproductions()
 })
 
 France.addEventListener('click', () => {
@@ -159,11 +165,17 @@ France.addEventListener('click', () => {
 footerF.addEventListener('click', () => {
     openFranceReproductions()
 })
+footerFm.addEventListener('click', () => {
+    openFranceReproductions()
+})
 
 England.addEventListener('click', () => {
     openEnglandReproductions()
 })
 footerE.addEventListener('click', () => {
+    openEnglandReproductions()
+})
+footerEm.addEventListener('click', () => {
     openEnglandReproductions()
 })
 
@@ -267,6 +279,7 @@ let deletingArticle = (el) => {
 
 let div = document.querySelector('.basket__main_articles') //////////////////////////////////////////////////////////////
 let openTheBasket = () => {
+    div.style.display = 'flex'
     inBasket.style.setProperty("display", "block")
     if(arr.length !== 0){
         inBasketText.style.display = 'none'
@@ -311,6 +324,24 @@ basketExit.addEventListener('click', () => {
     div.innerHTML = ``
 })
 
+let article = document.querySelectorAll('.reproductions__article')
+deleteAll.addEventListener('click', () => {
+    arr = []
+    localStorage.setItem("InkHouse", JSON.stringify(arr))
+    openTheBasket()
+    NumbOfArticles.textContent = arr.length
+    basketNav.style.display = 'none'
+    inBasketText.style.display = 'flex'
+    basketPrice.style.display = 'none'
+    span.style.display = 'none'
+    for(let el of article){
+        el.children[5].style.background = 'transparent'
+        el.children[5].style.color = '#598D66'
+        el.children[5].textContent = `В корзину`
+    }
+    div.style.display = 'none'
+})
+
 if(localStorage.getItem('InkHouse') !== null){
     arr = JSON.parse(localStorage.InkHouse)
     for(let i = 0; i < arr.length; i++){
@@ -321,4 +352,7 @@ if(localStorage.getItem('InkHouse') !== null){
     }
     span.style.display = `flex`
     NumbOfArticles.textContent = arr.length
+    if(NumbOfArticles.textContent === '0'){
+        span.style.display = 'none'
+    }
 }

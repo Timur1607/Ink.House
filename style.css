@@ -21,8 +21,6 @@ body {
 }
 
 .container__mobile {
-  max-width: 1188px;
-  width: 100%;
   margin: 0 auto;
   padding: 25px 39px;
   background: #E1EDE6;
@@ -43,6 +41,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1188px;
+  width: 100%;
+  margin: 0 auto;
 }
 .header__logo {
   width: 143px;
@@ -65,6 +66,7 @@ body {
 }
 .header__menu_img {
   position: relative;
+  cursor: pointer;
 }
 .header__menu_img_numb {
   color: #FFF;
@@ -77,14 +79,16 @@ body {
   display: flex;
   top: 0px;
   left: 6px;
+  line-height: 7px;
 }
 .header__menu_img_span {
   display: none;
   position: absolute;
   border-radius: 50%;
-  padding: 2px 6px;
+  padding: 2px 3px 3px 2px;
   background-color: #598D66;
-  top: 1px;
+  top: 3px;
+  left: 2px;
 }
 .header__menu_burger {
   display: none;

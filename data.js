@@ -162,13 +162,4 @@ export let data = [
                 type: 'Цветная литография (40х60)',
                 price: '22 000'
             },
-            {
-                country: "test",
-                countryRU: "тест",
-                img: './img/england/03 (18).webp',
-                author: 'Альфред Барр',
-                name: 'Рыжий кот',
-                type: 'Цветная литография (40х60)',
-                price: '22 000'
-            },
 ]
