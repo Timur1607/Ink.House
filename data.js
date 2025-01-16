@@ -130,10 +130,10 @@ export let data = [
                 country: "England",
                 countryRU: "Англия",
                 img: './img/england/03 (15).webp',
-                author: 'Джон Уайт',
-                name: 'Скалистый берег',
-                type: 'Цветная литография (40х60)',
-                price: '17 500'
+                author: 'Джим Уотсон',
+                name: 'Река и горы',
+                type: 'Акварель, бумага (50х80) ',
+                price: '20 500'
             },
             {
                 country: "England",
@@ -161,5 +161,14 @@ export let data = [
                 name: 'Рыжий кот',
                 type: 'Цветная литография (40х60)',
                 price: '22 000'
-            }
+            },
+            {
+                country: "test",
+                countryRU: "тест",
+                img: './img/england/03 (18).webp',
+                author: 'Альфред Барр',
+                name: 'Рыжий кот',
+                type: 'Цветная литография (40х60)',
+                price: '22 000'
+            },
 ]

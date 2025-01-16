@@ -74,6 +74,20 @@
             font-family: "Raleway", sans-serif;
             font-size: 20px;
             font-weight: 500;
+            transition: 0.5s;
+            &:hover{
+                color: #598D66;
+            }
+        
+            &:focus{
+                background: #D4E8D9;
+                color: #2C2D35;
+            }
+        
+            &:active{
+                background: transparent;
+                color: #376B44;
+            }
         }
     }
 
@@ -113,6 +127,20 @@
             font-weight: 500;
             line-height: 150%;
             text-decoration: none;
+            transition: 0.5s;
+            &:hover{
+                color: #598D66;
+            }
+        
+            &:focus{
+                background: #D4E8D9;
+                color: #2C2D35;
+            }
+        
+            &:active{
+                background: transparent;
+                color: #376B44;
+            }
         }
     }
 

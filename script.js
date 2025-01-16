@@ -78,19 +78,21 @@ function createArticles(){
 }
 createArticles()
 
-
 let France = document.querySelector('.France')
 let Germany = document.querySelector('.Germany')
 let England = document.querySelector('.England')
 let buyButton = document.querySelectorAll('.article__button')
+
 let basket = document.querySelector('.header__menu_img')
 let NumbOfArticles = document.querySelector('.header__menu_img_numb')
 let span = document.querySelector('.header__menu_img_span')
-
 let inBasket = document.querySelector('.basket')
 let inBasketText = document.querySelector('.basket__main_text')
 let basketExit = document.querySelector('.basket__top_exit')
 let basketNav = document.querySelector('.basket__main_nav')
+let basketPrice = document.querySelector('.basket__price')
+let basketPriceText = document.querySelector('.basket__price_text')
+let price = 0
 
 let burger = document.querySelector('.header__menu_burger')
 let burgerMenu = document.querySelector('.burger__menu')
@@ -98,6 +100,10 @@ let burgerMenuLink = document.querySelectorAll('.burger__menu_link')
 let FranceArticles = document.querySelector('.reproductions__articles_France')
 let GermanyArticles = document.querySelector('.reproductions__articles_Germany')
 let EnglandArticles = document.querySelector('.reproductions__articles_England')
+
+let footerG = document.querySelector('.footer__nav_text')
+let footerF = document.querySelector('.footer__nav_text')
+let footerE = document.querySelector('.footer__nav_text')
 
 let headerLogo = document.querySelector('.container__mobile')
 
@@ -136,15 +142,28 @@ let openEnglandReproductions = () => {
     EnglandArticles.classList.remove('Articles_script')
 }
 
+
+
+
 Germany.addEventListener('click', () => {
     openGermanyReproductions()
+})
+footerG.addEventListener('click', () => {
+    openGermanyReproductions()
+    console.log('work');
 })
 
 France.addEventListener('click', () => {
     openFranceReproductions()
 })
+footerF.addEventListener('click', () => {
+    openFranceReproductions()
+})
 
 England.addEventListener('click', () => {
+    openEnglandReproductions()
+})
+footerE.addEventListener('click', () => {
     openEnglandReproductions()
 })
 
@@ -153,13 +172,13 @@ burger.addEventListener('click', () => {
     if(n === null){
         burgerMenu.style.setProperty('left', '0')
         burgerMenu.style.setProperty('position', 'fixed')
-        burgerMenu.style.setProperty('top', '142px')
+        // burgerMenu.style.setProperty('top', '56px')
         burgerMenu.style.setProperty('height', '100vh')
         headerLogo.style.setProperty('position', 'fixed')
         n++
     } else if(n === 1){
         burgerMenu.style.setProperty('position', 'absolute')
-        burgerMenu.style.setProperty('left', '-100%')
+        burgerMenu.style.setProperty('left', '-400%')
         burgerMenu.style.setProperty('height', 'auto')
         headerLogo.style.setProperty('position', 'sticky')
         n = null
@@ -224,10 +243,16 @@ let deletingArticle = (el) => {
             article.children[5].style.background = 'transparent'
             article.children[5].style.color = '#598D66'
             article.children[5].textContent = `В корзину`
+            // console.log(el.children[2].textContent);
+            price = price - +(el.children[2].textContent.split(' ')[0] + el.children[2].textContent.split(' ')[1])
+            console.log(price);
+            basketPriceText.textContent = `Итог: ${price} руб`
+            
         }
     }
     console.log(arr);
     
+    NumbOfArticles.textContent = arr.length
 
     el.remove = true
     localStorage.setItem("InkHouse", JSON.stringify(arr))
@@ -235,6 +260,8 @@ let deletingArticle = (el) => {
         localStorage.clear()
         basketNav.style.display = 'none'
         inBasketText.style.display = 'flex'
+        basketPrice.style.display = 'none'
+        span.style.display = 'none'
     }
 }
 
@@ -243,11 +270,13 @@ let openTheBasket = () => {
     inBasket.style.setProperty("display", "block")
     if(arr.length !== 0){
         inBasketText.style.display = 'none'
-        basketNav.style.display = 'flex'   
+        basketNav.style.display = 'flex' 
+        basketPrice.style.display = 'flex'  
 
     } else if(arr.length === 0){
         basketNav.style.display = 'none'
         inBasketText.style.display = 'flex'
+        basketPrice.style.display = 'none'
     }
     for(let i = 0; i < arr.length; i++){
         let article = document.createElement('article')
@@ -263,13 +292,17 @@ let openTheBasket = () => {
             </div>
         `
         div.appendChild(article)
+
+        price = price + +(arr[i].cost.split(' ')[0] + arr[i].cost.split(' ')[1])
         
         let deleteArticle = article.querySelectorAll('.exit_article')
         for(let el of deleteArticle){
             el.addEventListener('click', () => deletingArticle(article))
         }
-        
     }
+
+
+    basketPriceText.textContent = `Итог: ${price} руб`
 }
 
 basket.addEventListener('click', () => openTheBasket())
