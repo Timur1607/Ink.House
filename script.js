@@ -181,12 +181,15 @@ footerEm.addEventListener('click', () => {
 
 let n = null
 burger.addEventListener('click', () => {
+    // headerLogo.style.position = 'sticky'
+    // headerLogo.fadeIn();
     if(n === null){
         burgerMenu.style.setProperty('left', '0')
         burgerMenu.style.setProperty('position', 'fixed')
         // burgerMenu.style.setProperty('top', '56px')
         burgerMenu.style.setProperty('height', '100vh')
-        headerLogo.style.setProperty('position', 'fixed')
+        headerLogo.style.setProperty('position', 'sticky')
+        headerLogo.style.transition = '2.0s'
         n++
     } else if(n === 1){
         burgerMenu.style.setProperty('position', 'absolute')
@@ -196,10 +199,17 @@ burger.addEventListener('click', () => {
         n = null
     }
 
+    if(window.innerWidth <= 350){
+        console.log('yes');
+        console.log(window.innerWidth);
+        headerLogo.style.position = 'sticky'
+        burgerMenu.style.position = 'absolute'
+    }
+
     for(let el of burgerMenuLink){
         el.addEventListener('click', () => {
             burgerMenu.style.setProperty('position', 'absolute')
-            burgerMenu.style.setProperty('left', '-100%')
+            burgerMenu.style.setProperty('left', '-400%')
             burgerMenu.style.setProperty('height', 'auto')
         })
     }
@@ -255,9 +265,12 @@ let deletingArticle = (el) => {
             article.children[5].style.background = 'transparent'
             article.children[5].style.color = '#598D66'
             article.children[5].textContent = `В корзину`
-            // console.log(el.children[2].textContent);
+            // console.log(el.children[2].textContent.split(' '));
             price = price - +(el.children[2].textContent.split(' ')[0] + el.children[2].textContent.split(' ')[1])
-            console.log(price);
+            // if(price.length < 6){
+            //     let priceT = price.length
+            // }
+            
             basketPriceText.textContent = `Итог: ${price} руб`
             
         }
@@ -281,6 +294,7 @@ let div = document.querySelector('.basket__main_articles') /////////////////////
 let openTheBasket = () => {
     div.style.display = 'flex'
     inBasket.style.setProperty("display", "block")
+    
     if(arr.length !== 0){
         inBasketText.style.display = 'none'
         basketNav.style.display = 'flex' 
@@ -314,6 +328,15 @@ let openTheBasket = () => {
         }
     }
 
+    let TextArticle = document.querySelectorAll(".basket__main_article_name")
+    let PictureArticleDesc = document.querySelector(".basket__main_nav_text")
+
+    if(window.innerWidth < 600){
+        for(let el of TextArticle){
+            el.style.display = 'none'
+        }
+        PictureArticleDesc.style.display = 'none'
+    }
 
     basketPriceText.textContent = `Итог: ${price} руб`
 }

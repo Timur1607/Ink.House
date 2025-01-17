@@ -239,16 +239,19 @@ body{
         }
 
         &_nav{
+            // max-width: 921px;
+            // width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding: 25px 310px 25px 40px;
+            padding: 25px 30px 25px 30px;
 
             &_text{
                 font-family: "Raleway", sans-serif;
                 font-size: 20px;
                 font-weight: 700;
                 text-decoration: none; 
+                margin-left: 20px;
             }
             &_name{
                 font-family: "Raleway", sans-serif;
@@ -262,6 +265,10 @@ body{
                 font-weight: 700;
                 text-decoration: none; 
             }
+            &_span{
+                width: 30px;
+                height: 30px;
+            }
         }
 
         &_articles{
@@ -271,6 +278,10 @@ body{
             padding: 30px;
             height: 300px;
             overflow: auto;
+            &::-webkit-scrollbar{
+                width: 0;
+                background: transparent;
+            }
         }
 
         &_article{
@@ -282,6 +293,8 @@ body{
             &_img{
                 width: 80px;
                 height: 120px;
+                margin-left: 20px;
+
             }
 
             &_name{
@@ -291,6 +304,7 @@ body{
                 text-decoration: none; 
                 display: flex;
                 align-items: center;
+                width: 170px;
             }
 
             &_cost{
@@ -300,6 +314,8 @@ body{
                 text-decoration: none; 
                 display: flex;
                 align-items: center;
+                // width: 150px;
+                // justify-content: center;
             }
         }
     }
@@ -308,6 +324,8 @@ body{
         background: #E1EDE6;
         display: flex;
         text-align: left;
+        align-items: center;
+        justify-content: space-between;
         // height: 50px;
         &_text{
             font-family: "Raleway", sans-serif;
@@ -317,6 +335,43 @@ body{
             padding: 20px 30px 20px 30px;
             display: flex;
             justify-content: center;
+        }
+
+        &_delete{
+            width: 180px;
+            height: 50px;
+            padding: 10px 10px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+            border: 1px solid #598D66;
+            color: #598D66;
+            font-family: "Raleway", sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            background-color: transparent;
+            transition: 0.5s;
+            text-decoration: none;
+            margin-right: 30px;
+
+            &:hover {
+                background: #598D66;
+                color: #FFF;
+            }
+
+            &:focus{
+                border: 1px solid #598D66;
+                background: #D4E8D9;
+                color: #598D66;
+            }
+
+            &:active{
+                background: #376B44;
+                color: #FFF;
+            }
         }
     }
 
@@ -633,6 +688,6 @@ body{
 @media screen and (max-width: 350px){
     .burger__menu{
         top: 56px;
-
+        
     }
 }
